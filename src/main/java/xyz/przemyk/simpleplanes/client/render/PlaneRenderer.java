@@ -20,6 +20,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.data.ModelData;
 import org.joml.Quaternionf;
+import xyz.przemyk.simpleplanes.SimplePlanesMod;
 import xyz.przemyk.simpleplanes.entities.CargoPlaneEntity;
 import xyz.przemyk.simpleplanes.entities.PlaneEntity;
 import xyz.przemyk.simpleplanes.misc.MathUtil;
@@ -138,23 +139,25 @@ public class PlaneRenderer<T extends PlaneEntity> extends EntityRenderer<T> {
     }
 
     public static ResourceLocation getMaterialTexture(PlaneEntity entity) {
-        Block block = entity.getMaterial();
-        if (cachedTextures.containsKey(block)) {
-            return cachedTextures.get(block);
-        }
-
-        ResourceLocation texture;
-        try {
-            ResourceLocation sprite = Minecraft.getInstance().getModelManager().getModel(new ModelResourceLocation(BuiltInRegistries.BLOCK.getKey(block), "inventory")).getQuads(null, Direction.SOUTH, RandomSource.create(), ModelData.EMPTY, null).getFirst().getSprite().contents().name();
-            texture = ResourceLocation.fromNamespaceAndPath(sprite.getNamespace(), "textures/" + sprite.getPath() + ".png");
-        } catch (IndexOutOfBoundsException | NullPointerException exception) {
-            texture = FALLBACK_TEXTURE;
-        }
-
-        cachedTextures.put(block, texture);
-        return texture;
+        return SU_57_TEXTURE;
+//        Block block = entity.getMaterial();
+//        if (cachedTextures.containsKey(block)) {
+//            return cachedTextures.get(block);
+//        }
+//
+//        ResourceLocation texture;
+//        try {
+//            ResourceLocation sprite = Minecraft.getInstance().getModelManager().getModel(new ModelResourceLocation(BuiltInRegistries.BLOCK.getKey(block), "inventory")).getQuads(null, Direction.SOUTH, RandomSource.create(), ModelData.EMPTY, null).getFirst().getSprite().contents().name();
+//            texture = ResourceLocation.fromNamespaceAndPath(sprite.getNamespace(), "textures/" + sprite.getPath() + ".png");
+//        } catch (IndexOutOfBoundsException | NullPointerException exception) {
+//            texture = FALLBACK_TEXTURE;
+//        }
+//
+//        cachedTextures.put(block, texture);
+//        return texture;
     }
 
     public static final Map<Block, ResourceLocation> cachedTextures = new HashMap<>();
     public static final ResourceLocation FALLBACK_TEXTURE = ResourceLocation.fromNamespaceAndPath("minecraft", "textures/block/oak_planks.png");
+    public static final ResourceLocation SU_57_TEXTURE = ResourceLocation.fromNamespaceAndPath(SimplePlanesMod.MODID, "textures/plane_upgrades/plane_su57.png");
 }
