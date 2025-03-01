@@ -938,7 +938,7 @@ public class PlaneEntity extends Entity implements IEntityWithComplexSpawn {
 
 //    @Override
     public float getPassengersRidingOffset() {
-        return 0.0f;
+        return 0.1f;
     }
 
     public static final TagKey<Block> FIREPROOF_MATERIALS_TAG = BlockTags.create(
@@ -1029,7 +1029,7 @@ public class PlaneEntity extends Entity implements IEntityWithComplexSpawn {
 
         int index = getPassengers().indexOf(passenger);
         if (index == 0) {
-            Vector3f pos = transformPos(new Vector3f(0, (float) (getPassengersRidingOffset()), 6.6f));
+            Vector3f pos = transformPos(new Vector3f(0, (float) (getPassengersRidingOffset()), 6.9f));
             moveFunction.accept(passenger, getX() + pos.x(), getY() + pos.y(), getZ() + pos.z());
         } else if (index == 1) {
             Vector3f pos = transformPos(new Vector3f(-1, (float) (getPassengersRidingOffset()), -1.3f));
