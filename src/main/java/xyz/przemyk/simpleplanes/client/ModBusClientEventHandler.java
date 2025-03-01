@@ -51,8 +51,8 @@ public class ModBusClientEventHandler {
         ClientEventHandler.dropPayloadKey = new KeyMapping("key.plane_drop_payload.desc", GLFW.GLFW_KEY_C, "key.simpleplanes.category");
         ClientEventHandler.throttleUp = new KeyMapping("key.plane_throttle_up.desc", GLFW.GLFW_KEY_UP, "key.simpleplanes.category");
         ClientEventHandler.throttleDown = new KeyMapping("key.plane_throttle_down.desc", GLFW.GLFW_KEY_DOWN, "key.simpleplanes.category");
-        ClientEventHandler.pitchUp = new KeyMapping("key.plane_pitch_up.desc", GLFW.GLFW_KEY_W, "key.simpleplanes.category");
-        ClientEventHandler.pitchDown = new KeyMapping("key.plane_pitch_down.desc", GLFW.GLFW_KEY_S, "key.simpleplanes.category");
+        ClientEventHandler.pitchUp = new KeyMapping("key.plane_pitch_up.desc", GLFW.GLFW_KEY_S, "key.simpleplanes.category");
+        ClientEventHandler.pitchDown = new KeyMapping("key.plane_pitch_down.desc", GLFW.GLFW_KEY_W, "key.simpleplanes.category");
         ClientEventHandler.yawRight = new KeyMapping("key.plane_yaw_right.desc", GLFW.GLFW_KEY_RIGHT, "key.simpleplanes.category");
         ClientEventHandler.yawLeft = new KeyMapping("key.plane_yaw_left.desc", GLFW.GLFW_KEY_LEFT, "key.simpleplanes.category");
         event.register(ClientEventHandler.moveHeliUpKey);
