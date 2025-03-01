@@ -126,7 +126,7 @@ public class PlaneEntity extends Entity implements IEntityWithComplexSpawn {
         pBuilder.define(MAX_HEALTH, 10);
         pBuilder.define(HEALTH, 10);
         pBuilder.define(Q, new Quaternionf());
-        pBuilder.define(MAX_SPEED, 0.25f);
+        pBuilder.define(MAX_SPEED, 25.0f);
         pBuilder.define(MATERIAL, BuiltInRegistries.BLOCK.getKey(Blocks.OAK_PLANKS).toString());
         pBuilder.define(TIME_SINCE_HIT, 0);
         pBuilder.define(DAMAGE_TAKEN, 0f);
@@ -938,7 +938,7 @@ public class PlaneEntity extends Entity implements IEntityWithComplexSpawn {
 
 //    @Override
     public float getPassengersRidingOffset() {
-        return 0.5f;
+        return 0.0f;
     }
 
     public static final TagKey<Block> FIREPROOF_MATERIALS_TAG = BlockTags.create(
@@ -1029,7 +1029,7 @@ public class PlaneEntity extends Entity implements IEntityWithComplexSpawn {
 
         int index = getPassengers().indexOf(passenger);
         if (index == 0) {
-            Vector3f pos = transformPos(new Vector3f(0, (float) (getPassengersRidingOffset()), 0));
+            Vector3f pos = transformPos(new Vector3f(0, (float) (getPassengersRidingOffset()), 6.6f));
             moveFunction.accept(passenger, getX() + pos.x(), getY() + pos.y(), getZ() + pos.z());
         } else if (index == 1) {
             Vector3f pos = transformPos(new Vector3f(-1, (float) (getPassengersRidingOffset()), -1.3f));
